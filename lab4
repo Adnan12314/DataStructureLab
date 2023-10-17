@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+#define size 10
+int arr[size],top=-1;
+//ISEMPTY
+    bool isempty()
+    {
+    if (top==-1)
+        return true;
+    else
+        return false;
+}
+//push
+
+void push(int value)
+{
+    if(top==size-1)
+    {
+        cout <<"Stack is full!\n";
+
+    }
+
+        else
+    {
+        top++;
+      arr[top]=value;
+    }
+}
+
+//pop
+void pop()
+{
+    if(isempty())
+        cout<<"Stack is Empty!\n";
+    else
+        top--;
+}
+
+//show_top()
+
+void show_top()
+{
+
+if(isempty())
+    cout<<"Stack is empty!\n";
+else cout<<"Element at top is : "<<arr[top]<<"\n";
+}
+//Display
+
+void displayStack()
+{
+    if(isempty())
+    {
+        cout<<"Stack is Empty!\n";
+    }
+    else
+    {
+        for(int i=0; i<=top;i++)
+            cout<<arr[i]<<" ";
+        cout<<"\n";
+    }
+}
+
+int main()
+
+{
+    int value;
+push(2);
+    push(2);
+    push(2);
+    push(2);
+    push(2);
+    push(2);push(2);
+    push(2);
+    displayStack();
+    show_top();
+
+    cout << "Hello world!" << endl;
+    return 0;
+}

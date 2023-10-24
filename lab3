@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+struct student {
+    int id, semester, credits;
+    float cgpa;
+};
+
+int main() {
+    student st[10];
+    st[1].id = 47979; st[1].semester = 5; st[1].credits = 51; st[1].cgpa = 3.75;
+    st[2].id = 47980; st[2].semester = 6; st[2].credits = 55; st[2].cgpa = 3.50;
+    st[3].id = 47981; st[3].semester = 3; st[3].credits = 40; st[3].cgpa = 3.20;
+    st[4].id = 47982; st[4].semester = 4; st[4].credits = 48; st[4].cgpa = 3.50;
+    st[5].id = 47983; st[5].semester = 2; st[5].credits = 27; st[5].cgpa = 3.77;
+    st[6].id = 47984; st[6].semester = 1; st[6].credits = 16; st[6].cgpa = 3.90;
+    st[7].id = 47985; st[7].semester = 6; st[7].credits = 72; st[7].cgpa = 3.80;
+    st[8].id = 47986; st[8].semester = 8; st[8].credits = 110; st[8].cgpa = 3.90;
+    st[9].id = 47987; st[9].semester = 7; st[9].credits = 80; st[9].cgpa = 2.75;
+    st[10].id = 47988; st[10].semester = 1; st[10].credits = 12; st[10].cgpa = 3.80;
+
+    cout << "\nScholarship Students (CGPA >= 3.75):" << endl;
+    for (int i = 1; i < 11; i++) {
+        if (st[i].cgpa >= 3.75) {
+            cout << "Student ID: " << st[i].id << endl;
+        }
+    }
+
+    cout << "\nStudents with more than 50 credits:" << endl;
+    for (int i = 1; i < 11; i++) {
+        if (st[i].credits > 50) {
+            cout << "Student ID: " << st[i].id << endl;
+        }
+    }
+
+    cout << "\nStudents with at least 2 semesters and 28 credits:" << endl;
+    for (int i = 1; i < 11; i++) {
+        if (st[i].semester >= 2 && st[i].credits >= 28) {
+            cout << "Student ID: " << st[i].id << endl;
+        }
+    }
+
+    return 0;
+}

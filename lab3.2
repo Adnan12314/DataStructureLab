@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+string encode(const string& s, int j) {
+    string encoded = s;
+    for (char& c : encoded) {
+        if (j > 0) {
+            j--;
+        } else {
+            c += 3;
+        }
+    }
+    return encoded;
+}
+
+string decode(const string& encoded, int j) {
+    string decoded = encoded;
+    for (char& c : decoded) {
+        if (j > 0) {
+            j--;
+        } else {
+            c -= 3;
+        }
+    }
+    return decoded;
+}
+
+int main() {
+    string inputString = "I am a Student";
+    int code = 5;
+    
+    string encodedString = encode(inputString, code);
+    cout << "Encoded String: " << encodedString << endl;
+   
+    string decodedString = decode(encodedString, code);
+    cout << "Decoded String: " << decodedString << endl;
+
+    return 0;
+}
